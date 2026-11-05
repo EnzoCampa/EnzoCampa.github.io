@@ -30,11 +30,11 @@ html {
 
 body {
     background-color: var(--background);
-    background-image:
-        radial-gradient(ellipse at 80% 30%, rgba(55, 35, 125, 0.18), transparent 45%),
-        radial-gradient(ellipse at 10% 90%, rgba(80, 55, 120, 0.10), transparent 40%),
-        radial-gradient(rgba(187, 165, 216, 0.055) 0.7px, transparent 0.7px);
-    background-size: auto, auto, 34px 34px;
+    background-image: radial-gradient(ellipse at 80% 30%, rgba(55, 35, 125, 0.18), transparent 45%), radial-gradient(ellipse at 10% 90%, rgba(80, 55, 120, 0.10), transparent 40%), radial-gradient(rgba(187, 165, 216, 0.055) 0.7px, transparent 0.7px), url("../assets/hero-landscape.png");
+    background-size: auto, auto, 34px 34px, cover;
+    background-position: center, center, center, center top;
+    background-repeat: no-repeat, no-repeat, repeat, no-repeat;
+    background-attachment: fixed;
     color: var(--ivory);
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
@@ -104,65 +104,30 @@ button {
    HERO SECTION
 ========================================= */
 
+/* =========================================
+   HERO SECTION
+========================================= */
+
 .hero {
     min-height: calc(100vh - 85px);
     padding: 90px 8% 110px;
-
     display: grid;
     grid-template-columns: minmax(0, 1.75fr) minmax(280px, 0.65fr);
     align-items: center;
-
     gap: clamp(24px, 3.5vw, 58px);
-
     position: relative;
     isolation: isolate;
     overflow: hidden;
 }
 
-/* Halo violet en arrière-plan */
+    /* Paysage fantastique en arrière-plan */
 
-.hero::before {
-    content: "";
-    position: absolute;
-    z-index: -2;
+/* Contenu principal */
 
-    width: 800px;
-    height: 800px;
-
-    top: -100px;
-    right: -250px;
-
-    background: radial-gradient(
-        circle,
-        rgba(75, 52, 155, 0.22),
-        rgba(36, 23, 115, 0.08) 45%,
-        transparent 70%
-    );
-
-    filter: blur(40px);
-    pointer-events: none;
-}
-
-/* Courbes discrètes inspirées des univers fantasy */
-
-.hero::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    inset: 0;
-
-    background:
-        repeating-radial-gradient(
-            ellipse at 88% 45%,
-            transparent 0,
-            transparent 85px,
-            rgba(187, 165, 216, 0.045) 86px,
-            transparent 88px
-        ),
-        linear-gradient(115deg, transparent 0 58%, rgba(187, 165, 216, 0.025) 58.1%, transparent 58.3% 100%);
-
-    opacity: 0.75;
-    pointer-events: none;
+.hero-content {
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content {
@@ -350,24 +315,26 @@ h1 span {
 ========================================= */
 
 .scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 8%;
-
+    position: fixed;
+    bottom: 32px;
+    left: 6%;
+    z-index: 99999;
     display: flex;
     align-items: center;
     gap: 12px;
-
-    color: #777481;
-    font-size: 9px;
-    letter-spacing: 2px;
+    color: rgba(187, 165, 216, 0.65);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    pointer-events: none;
 }
 
-.scroll-indicator span {
-    width: 35px;
-    height: 1px;
-    background: var(--lavender);
-}
+    .scroll-indicator::before {
+        content: "";
+        width: 35px;
+        height: 1px;
+        background: var(--lavender);
+    }
 
 /* =========================================
    PROJECTS & OTHER SECTIONS
@@ -378,7 +345,6 @@ h1 span {
     padding: 100px 8%;
     min-height: 300px;
 
-    border-top: 1px solid rgba(255,255,255,0.07);
 
     opacity: 0;
     transform: translateY(25px);
@@ -405,6 +371,365 @@ h1 span {
 .simple-section p {
     color: var(--muted);
 }
+
+/* =========================================
+   PROJECTS SECTION
+========================================= */
+
+.projects-section {
+    padding: 110px 8%;
+}
+
+.projects-heading {
+    max-width: 700px;
+    margin-bottom: 90px;
+}
+
+    .projects-heading h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(30px, 4vw, 45px);
+        margin-bottom: 18px;
+    }
+
+    .projects-heading > p:not(.eyebrow) {
+        color: var(--muted);
+        line-height: 1.8;
+    }
+
+/* PROJECT ROW */
+
+.project-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 7%;
+    margin-bottom: 130px;
+}
+
+    .project-row:last-child {
+        margin-bottom: 0;
+    }
+
+    /* REVERSE LAYOUT */
+
+    .project-row.reverse .project-image {
+        order: -1;
+    }
+
+/* PROJECT CONTENT */
+
+.project-content {
+    max-width: 550px;
+}
+
+.project-category {
+    color: var(--lavender);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.project-content h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(35px, 4vw, 52px);
+    margin-bottom: 25px;
+}
+
+.project-description {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+/* PROJECT IMAGE */
+
+.project-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid rgba(187, 165, 216, 0.15);
+}
+
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .project-image:hover img {
+        transform: scale(1.04);
+    }
+
+/* PROJECT LINK */
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+    padding-bottom: 7px;
+    color: var(--ivory);
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--lavender);
+    transition: color 0.3s ease;
+}
+
+    .project-link:hover {
+        color: var(--lavender);
+    }
+
+    .project-link span {
+        color: var(--lavender);
+    }
+
+/* =========================================
+   PROJECTS - VISUAL IMPROVEMENTS
+========================================= */
+
+/* PROJECT CONTENT PANEL */
+
+.project-content {
+    max-width: 100%;
+    padding: 38px;
+    background: rgba(17, 17, 22, 0.82);
+    border-left: 3px solid var(--lavender);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* PROJECT TYPOGRAPHY */
+
+.project-category {
+    font-size: 12px;
+    margin-bottom: 22px;
+}
+
+.project-content h3 {
+    font-size: clamp(40px, 4vw, 57px);
+    margin-bottom: 28px;
+}
+
+.project-description {
+    font-size: 19px;
+    line-height: 1.85;
+    margin-bottom: 20px;
+}
+
+.project-link {
+    font-size: 18px;
+    margin-top: 28px;
+}
+
+/* PROJECT IMAGES */
+
+.project-image {
+    aspect-ratio: 16 / 10;
+    background: rgba(17, 17, 22, 0.85);
+    padding: 12px;
+}
+
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.5s ease;
+    }
+
+/* SECTION HEADING */
+
+.projects-heading h2 {
+    font-size: clamp(35px, 4vw, 50px);
+}
+
+.projects-heading > p:not(.eyebrow) {
+    font-size: 18px;
+    line-height: 1.8;
+}
+/* =========================================
+   PROJECT CARD - UNIFIED LAYOUT
+========================================= */
+
+.project-row {
+    display: block;
+    margin-bottom: 100px;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    background: rgba(17, 17, 22, 0.88);
+    border: 1px solid rgba(187, 165, 216, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.project-content {
+    max-width: none;
+    padding: 55px;
+    background: transparent;
+    border-left: 3px solid var(--lavender);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    aspect-ratio: auto;
+    padding: 30px;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+/* INVERSE ORDER */
+
+.project-row.reverse .project-content {
+    order: 2;
+}
+
+.project-row.reverse .project-image {
+    order: 1;
+}
+/* LIMIT IMAGE SIZE */
+
+.project-image {
+    min-height: 450px;
+    padding: 45px;
+}
+
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        max-width: 800px;
+        max-height: 800px;
+        object-fit: contain;
+    }
+/* Séparation entre image et texte */
+
+.project-content {
+    border-left: none;
+}
+
+.project-row:not(.reverse) .project-image {
+    border-left: 3px solid var(--lavender);
+}
+
+.project-row.reverse .project-content {
+    border-left: 3px solid var(--lavender);
+}
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+
+    .project-content {
+        padding: 30px;
+        order: 1 !important;
+    }
+
+    .project-image {
+        min-height: 280px;
+        padding: 20px;
+        order: 2 !important;
+    }
+}
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .project-content {
+        padding: 25px;
+    }
+
+        .project-content h3 {
+            font-size: 38px;
+        }
+
+    .project-description {
+        font-size: 17px;
+    }
+
+    .project-link {
+        font-size: 16px;
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .projects-section {
+        padding: 90px 6%;
+    }
+
+    .project-row {
+        gap: 4%;
+    }
+
+    .project-content h3 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .projects-section {
+        padding: 75px 7%;
+    }
+
+    .projects-heading {
+        margin-bottom: 55px;
+    }
+
+    .project-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 85px;
+    }
+
+        .project-row.reverse .project-image {
+            order: 0;
+        }
+
+    .project-content {
+        max-width: 100%;
+    }
+
+        .project-content h3 {
+            font-size: 36px;
+        }
+
+    .project-image {
+        aspect-ratio: 16 / 10;
+    }
+}
+
+
 
 /* =========================================
    TABLET
@@ -510,10 +835,6 @@ h1 span {
         max-width: 100%;
     }
 
-    .scroll-indicator {
-        left: 7%;
-    }
-
     .projects-placeholder,
     .simple-section {
         padding: 75px 7%;
@@ -540,4 +861,6 @@ h1 span {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
     }
+
 }
+
