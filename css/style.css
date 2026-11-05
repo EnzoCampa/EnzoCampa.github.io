@@ -1,0 +1,543 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+    --background: #111116;
+    --surface: #1B1922;
+    --purple: #241773;
+    --lavender: #BBA5D8;
+    --ivory: #F5F1E9;
+    --muted: #AAA7B2;
+}
+
+/* =========================================
+   RESET & GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background);
+    background-image:
+        radial-gradient(ellipse at 80% 30%, rgba(55, 35, 125, 0.18), transparent 45%),
+        radial-gradient(ellipse at 10% 90%, rgba(80, 55, 120, 0.10), transparent 40%),
+        radial-gradient(rgba(187, 165, 216, 0.055) 0.7px, transparent 0.7px);
+    background-size: auto, auto, 34px 34px;
+    color: var(--ivory);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar {
+    width: 100%;
+    height: 85px;
+    padding: 0 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--lavender);
+}
+
+.nav-links {
+    display: flex;
+    gap: 38px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--lavender);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+    min-height: calc(100vh - 85px);
+    padding: 90px 8% 110px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.75fr) minmax(280px, 0.65fr);
+    align-items: center;
+
+    gap: clamp(24px, 3.5vw, 58px);
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* Halo violet en arrière-plan */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+
+    width: 800px;
+    height: 800px;
+
+    top: -100px;
+    right: -250px;
+
+    background: radial-gradient(
+        circle,
+        rgba(75, 52, 155, 0.22),
+        rgba(36, 23, 115, 0.08) 45%,
+        transparent 70%
+    );
+
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+/* Courbes discrètes inspirées des univers fantasy */
+
+.hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+
+    background:
+        repeating-radial-gradient(
+            ellipse at 88% 45%,
+            transparent 0,
+            transparent 85px,
+            rgba(187, 165, 216, 0.045) 86px,
+            transparent 88px
+        ),
+        linear-gradient(115deg, transparent 0 58%, rgba(187, 165, 216, 0.025) 58.1%, transparent 58.3% 100%);
+
+    opacity: 0.75;
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    color: var(--lavender);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--lavender);
+    margin-right: 10px;
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(65px, 7vw, 100px);
+    line-height: 0.98;
+    letter-spacing: -5px;
+    margin-bottom: 35px;
+}
+
+h1 span {
+    color: var(--lavender);
+}
+
+.hero h2 {
+    font-size: 23px;
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+
+.hero-description {
+    max-width: 900px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.85;
+    margin-bottom: 14px;
+}
+
+.hero-description.secondary {
+    margin-bottom: 32px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    padding: 15px 22px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--purple);
+    border: 1px solid var(--purple);
+}
+
+.btn-primary span {
+    margin-left: 12px;
+}
+
+.btn-primary:hover {
+    background: var(--lavender);
+    border-color: var(--lavender);
+    color: var(--background);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.btn-secondary:hover {
+    border-color: var(--lavender);
+    color: var(--lavender);
+}
+
+/* =========================================
+   TECHNOLOGIES
+========================================= */
+
+.hero-technologies {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+
+    color: #777481;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+/* =========================================
+   PORTRAIT
+========================================= */
+
+.hero-visual {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.portrait-frame {
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 0.88;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    position: relative;
+    transform: none;
+}
+
+.portrait-decoration {
+    display: none;
+}
+
+.portrait {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 35%;
+
+    border-radius: 2px;
+    filter: none;
+
+    box-shadow: none;
+}
+
+.portrait-caption {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    right: 18px;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: white;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Aucun symbole décoratif autour du portrait */
+
+.floating-symbol {
+    display: none;
+}
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 8%;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #777481;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.scroll-indicator span {
+    width: 35px;
+    height: 1px;
+    background: var(--lavender);
+}
+
+/* =========================================
+   PROJECTS & OTHER SECTIONS
+========================================= */
+
+.projects-placeholder,
+.simple-section {
+    padding: 100px 8%;
+    min-height: 300px;
+
+    border-top: 1px solid rgba(255,255,255,0.07);
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.projects-placeholder.visible,
+.simple-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.projects-placeholder h2,
+.simple-section h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 35px;
+    margin-bottom: 18px;
+}
+
+.projects-placeholder > p:not(.eyebrow),
+.simple-section p {
+    color: var(--muted);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: minmax(0, 1.45fr) minmax(220px, 0.7fr);
+        padding-left: 6%;
+        padding-right: 6%;
+        gap: 26px;
+    }
+
+    h1 {
+        font-size: 65px;
+    }
+
+    .hero h2 {
+        font-size: 18px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .navbar {
+        padding: 0 6%;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: 70px;
+        padding: 0 7%;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .menu-toggle span {
+        width: 25px;
+        height: 2px;
+        background: var(--ivory);
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+
+        padding: 25px;
+
+        background: var(--surface);
+
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding: 65px 7% 100px;
+        gap: 40px;
+    }
+
+    h1 {
+        font-size: 65px;
+        letter-spacing: -3px;
+    }
+
+    .hero h2 {
+        font-size: 19px;
+    }
+
+    .hero-description {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .hero-visual {
+        width: 80%;
+        max-width: 330px;
+        margin: 20px auto;
+    }
+
+    .portrait-frame {
+        max-width: 100%;
+    }
+
+    .scroll-indicator {
+        left: 7%;
+    }
+
+    .projects-placeholder,
+    .simple-section {
+        padding: 75px 7%;
+    }
+
+    .projects-placeholder h2,
+    .simple-section h2 {
+        font-size: 28px;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
