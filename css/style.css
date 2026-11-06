@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 /* =========================================
@@ -55,7 +54,7 @@ button {
 
 .navbar {
     width: 100%;
-    height: 85px;
+    height: 50px;
     padding: 0 8%;
 
     display: flex;
@@ -64,8 +63,13 @@ button {
 
     border-bottom: 1px solid rgba(255,255,255,0.07);
 
-    position: relative;
-    z-index: 10;
+   position: sticky;
+   top: 0;
+   z-index: 10000;
+
+   background: rgba(17, 17, 22, 0.85);
+   backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
 }
 
 .logo {
@@ -130,12 +134,6 @@ button {
     z-index: 2;
 }
 
-.hero-content {
-    max-width: 100%;
-    position: relative;
-    z-index: 2;
-}
-
 .eyebrow {
     color: var(--lavender);
     font-size: 12px;
@@ -177,7 +175,7 @@ h1 span {
 
 .hero-description {
     max-width: 900px;
-    color: var(--muted);
+    color: var(--ivory);
     font-size: 15px;
     line-height: 1.85;
     margin-bottom: 14px;
@@ -238,12 +236,99 @@ h1 span {
 
 .hero-technologies {
     display: flex;
-    gap: 22px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+.hero-technologies span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #BBA5D8;
+    white-space: nowrap;
+}
+/* =========================================
+   PORTRAIT - MINIMAL GEOMETRIC FRAME
+========================================= */
 
-    color: #777481;
-    font-size: 10px;
-    letter-spacing: 1.5px;
+.portrait-frame {
+    position: relative;
+    isolation: isolate;
+    overflow: visible;
+    border: none;
+    transform: none;
+}
+
+/* Forme géométrique en arrière-plan */
+.portrait-frame::after {
+    content: "";
+    position: absolute;
+    z-index: -2;
+
+    top: 12%;
+    right: -28px;
+
+    width: 45%;
+    height: 70%;
+
+    background: rgba(187, 165, 216, 0.18);
+
+    clip-path: polygon(
+        25% 0,
+        100% 0,
+        100% 75%,
+        75% 100%,
+        0 100%,
+        0 25%
+    );
+}
+
+/* Contour géométrique */
+.portrait-frame::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    inset: -9px;
+
+    background: var(--lavender);
+
+    clip-path: polygon(
+        0 0,
+        85% 0,
+        100% 15%,
+        100% 100%,
+        15% 100%,
+        0 85%
+    );
+}
+
+/* Image */
+.portrait {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    border-radius: 0;
+}
+
+/* Bandeau inférieur */
+.portrait-caption {
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 18px;
+
+    background: rgba(17, 17, 22, 0.75);
+    backdrop-filter: blur(8px);
+
+    border-top: 1px solid rgba(187, 165, 216, 0.35);
 }
 
 /* =========================================
@@ -311,32 +396,6 @@ h1 span {
 }
 
 /* =========================================
-   SCROLL INDICATOR
-========================================= */
-
-.scroll-indicator {
-    position: fixed;
-    bottom: 32px;
-    left: 6%;
-    z-index: 99999;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: rgba(187, 165, 216, 0.65);
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    pointer-events: none;
-}
-
-    .scroll-indicator::before {
-        content: "";
-        width: 35px;
-        height: 1px;
-        background: var(--lavender);
-    }
-
-/* =========================================
    PROJECTS & OTHER SECTIONS
 ========================================= */
 
@@ -344,7 +403,6 @@ h1 span {
 .simple-section {
     padding: 100px 8%;
     min-height: 300px;
-
 
     opacity: 0;
     transform: translateY(25px);
@@ -587,9 +645,9 @@ h1 span {
 .project-image {
     width: 100%;
     height: 100%;
-    min-height: 450px;
+    min-height: 350px;
     aspect-ratio: auto;
-    padding: 30px;
+    padding: 20px;
     background: transparent;
     border: none;
     display: flex;
@@ -640,7 +698,678 @@ h1 span {
     border-left: 3px solid var(--lavender);
 }
 /* MOBILE */
+/* =========================================
+   SCROLL SIDEBAR
+========================================= */
 
+.scroll-sidebar {
+    position: fixed;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.scroll-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    color: rgba(187, 165, 216, 0.35);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+
+    transition: color 0.3s ease;
+}
+
+.scroll-number {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(187, 165, 216, 0.25);
+    border-radius: 50%;
+
+    font-size: 10px;
+    transition: all 0.3s ease;
+}
+
+.scroll-label {
+    opacity: 0;
+    transform: translateX(-8px);
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.scroll-link:hover .scroll-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-link:hover,
+.scroll-link.active {
+    color: var(--lavender);
+}
+
+.scroll-link.active .scroll-number {
+    background: var(--purple);
+    border-color: var(--lavender);
+    color: var(--ivory);
+}
+
+/* =========================================
+   VORACE - IMAGE DIMENSIONS
+========================================= */
+
+.project-row--vorace .project-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    min-height: 0;
+    max-width: 650px;
+    justify-self: center;
+    align-self: center;
+    overflow: hidden;
+}
+
+.project-row--vorace .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* APPROACH SECTION */
+
+.approach-section {
+    background: #111116;
+    padding: 80px 5%;
+    color: #F5F1E9;
+}
+
+.approach-header {
+    position: relative;
+    padding-bottom: 26px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #393342;
+}
+
+.approach-header h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(28px, 3vw, 42px);
+    margin: 24px 0 12px;
+}
+
+.approach-header > p:last-child {
+    color: #AAA7B2;
+    line-height: 1.7;
+}
+
+.approach-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.approach-stage h3 {
+    font-size: 19px;
+    margin-bottom: 18px;
+}
+
+.approach-card {
+    border: 1px solid #66568A;
+    border-radius: 11px;
+    padding: 20px 16px;
+    transition: border-color 0.25s ease,
+                background 0.25s ease;
+}
+
+.approach-card:hover {
+    border-color: #BBA5D8;
+    background: #1B1922;
+}
+
+.approach-card-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.approach-card-title h4 {
+    font-size: 19px;
+    margin: 0;
+}
+
+.approach-icon {
+    color: #BBA5D8;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.approach-card p {
+    color: #AAA7B2;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.approach-components {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin: 14px 0 10px;
+}
+
+.approach-components span {
+    background: #292436;
+    color: #D8C8ED;
+    text-align: center;
+    padding: 12px 8px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.approach-arrow {
+    color: #BBA5D8;
+    text-align: center;
+    font-size: 23px;
+    line-height: 1;
+    padding: 2px 0;
+}
+
+.approach-content {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3%;
+    padding-right: 5%;
+    box-sizing: border-box;
+}
+
+/* ABOUT SECTION */
+
+.about-section {
+    background: #111116;
+    color: #F5F1E9;
+    padding: 80px 5%;
+}
+
+.about-header {
+    margin-bottom: 45px;
+}
+
+.about-header h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    margin: 20px 0 10px;
+}
+
+.about-header > p:last-child,
+.about-intro p {
+    color: #AAA7B2;
+    line-height: 1.7;
+}
+
+/* PERSONAL PRESENTATION */
+
+.about-personal {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+    grid-template-areas:
+        "intro portrait"
+        "values values";
+    column-gap: 55px;
+    row-gap: 42px;
+    align-items: start;
+}
+
+.about-intro {
+    grid-area: intro;
+    min-width: 0;
+}
+
+.about-right {
+    grid-area: portrait;
+}
+
+.about-values {
+    grid-area: values;
+}
+
+.about-intro h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 27px;
+    margin: 0 0 20px;
+}
+
+.about-intro p {
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.value-card {
+    background: #1B1922;
+    border: 1px solid #393342;
+    border-radius: 10px;
+    padding: 20px;
+    transition: border-color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.value-card:hover {
+    border-color: #BBA5D8;
+    transform: translateY(-3px);
+}
+
+.value-number {
+    color: #BBA5D8;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.value-card h4 {
+    font-size: 17px;
+    margin: 15px 0 8px;
+}
+
+.value-card p {
+    color: #AAA7B2;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* SEPARATOR */
+
+.about-separator {
+    height: 1px;
+    background: #393342;
+    margin: 75px 0;
+}
+
+/* TECHNICAL PRESENTATION */
+
+.about-technical .approach-header {
+    margin-bottom: 30px;
+}
+
+/* POSITIONNEMENT DE L'IMAGE DANS LA SECTION À PROPOS */
+.about-right {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-section {
+    background: #111116;
+    color: #F5F1E9;
+    padding: 120px 10%;
+}
+
+.contact-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-content h2 {
+    max-width: 750px;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.1;
+    margin: 25px 0;
+}
+
+.contact-description {
+    max-width: 550px;
+    color: #AAA7B2;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 55px;
+}
+
+.contact-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.contact-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 145px;
+    padding: 25px;
+    background: #1B1922;
+    border: 1px solid #393442;
+    border-radius: 10px;
+    color: #F5F1E9;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.contact-link:hover {
+    border-color: #BBA5D8;
+    transform: translateY(-5px);
+    background: #241F2D;
+}
+
+.contact-label {
+    color: #BBA5D8;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.contact-link h3 {
+    font-size: 17px;
+    margin-top: 12px;
+}
+
+.contact-arrow {
+    font-size: 25px;
+    color: #BBA5D8;
+}
+
+.contact-footer {
+    margin-top: 80px;
+    padding-top: 25px;
+    border-top: 1px solid #393442;
+    color: #AAA7B2;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+/* EN-TÊTE À PROPOS */
+
+.about-section {
+    padding: 0 5% 80px;
+}
+
+.about-heading {
+    background: linear-gradient(120deg, #1B1738, #241773);
+    padding: 65px 5%;
+    margin: 0 -5% 0;
+}
+
+.about-heading h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    margin: 20px 0 10px;
+}
+
+.about-heading > p:last-child {
+    color: #AAA7B2;
+    line-height: 1.7;
+}
+
+.about-content {
+    background: #111116;
+    padding: 80px 5%;
+}
+/* =========================================
+   ABOUT — STRUCTURE GÉNÉRALE
+========================================= */
+
+.about-section {
+    background: transparent;
+    color: var(--ivory);
+    padding: 110px 8%;
+}
+
+/* Titre sur le fond général du site */
+.about-section > .section-header {
+    max-width: 700px;
+    margin: 0 0 90px;
+    padding: 0;
+    background: none;
+}
+
+.about-section > .section-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(35px, 4vw, 50px);
+    margin: 18px 0;
+}
+
+.about-section > .section-header > p:last-child {
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Panneau sombre */
+.about-content {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 55px;
+    background: rgba(17, 17, 22, 0.92);
+    border: 1px solid rgba(187, 165, 216, 0.2);
+    border-radius: 4px;
+    backdrop-filter: blur(12px);
+}
+
+/* =========================================
+   ABOUT — PRÉSENTATION PERSONNELLE
+========================================= */
+
+.about-personal {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    grid-template-areas:
+        "intro portrait"
+        "values values";
+    column-gap: 55px;
+    row-gap: 45px;
+    align-items: start;
+}
+
+.about-intro {
+    grid-area: intro;
+    align-self: center;
+
+}
+
+.about-right {
+    grid-area: portrait;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+.about-right .hero-visual {
+    width: 100%;
+    max-width: 350px;
+    margin: 0;
+}
+
+.about-values {
+    grid-area: values;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+/* =========================================
+   ABOUT — APPROCHE TECHNIQUE
+========================================= */
+
+.approach-content {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+.about-separator {
+    height: 1px;
+    background: #393342;
+    margin: 75px 0;
+}
+
+/* =========================================
+   ABOUT — RESPONSIVE
+========================================= */
+/* Portrait cliquable du Hero */
+.hero-portrait-link {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    cursor: pointer;
+}
+
+/* Animation au survol */
+.hero-portrait-link .portrait {
+    transition: transform 0.5s ease;
+}
+
+.hero-portrait-link:hover .portrait {
+    transform: scale(1.04);
+}
+
+/* Accessibilité clavier */
+.hero-portrait-link:focus-visible {
+    outline: 2px solid var(--lavender);
+    outline-offset: 10px;
+}
+
+@media (max-width: 850px) {
+    .about-personal {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "intro"
+            "portrait"
+            "values";
+        row-gap: 35px;
+    }
+
+    .about-right .hero-visual {
+        max-width: 330px;
+        margin: 0 auto;
+    }
+
+    .about-values {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .about-section {
+        padding: 75px 7%;
+    }
+
+    .about-section > .section-header {
+        margin-bottom: 50px;
+    }
+
+    .about-content {
+        padding: 25px;
+    }
+
+    .about-values {
+        grid-template-columns: 1fr;
+    }
+
+    .about-separator {
+        margin: 50px 0;
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .contact-links {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section {
+        padding: 80px 7%;
+    }
+}
+
+@media (max-width: 850px) {
+    .about-personal {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "intro"
+            "portrait"
+            "values";
+        row-gap: 30px;
+    }
+
+    .about-right {
+        justify-content: flex-start;
+    }
+
+    .about-values {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .about-section {
+        padding: 55px 20px;
+    }
+
+    .about-values {
+        grid-template-columns: 1fr;
+    }
+
+    .about-right .hero-visual {
+        width: min(100%, 330px);
+        margin: 0 auto;
+    }
+
+    .about-separator {
+        margin: 50px 0;
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+    .approach-section {
+        padding: 55px 20px;
+    }
+
+    .approach-components {
+        grid-template-columns: 1fr;
+    }
+
+    .approach-card-title h4 {
+        font-size: 17px;
+    }
+}
+
+/* Masquer sur mobile */
+
+@media (max-width: 650px) {
+    .scroll-sidebar {
+        display: none;
+    }
+}
 @media (max-width: 650px) {
 
     .project-card {
@@ -728,8 +1457,6 @@ h1 span {
         aspect-ratio: 16 / 10;
     }
 }
-
-
 
 /* =========================================
    TABLET
@@ -863,4 +1590,3 @@ h1 span {
     }
 
 }
-

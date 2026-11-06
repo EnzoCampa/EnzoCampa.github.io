@@ -30,3 +30,49 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".projects-placeholder, .simple-section")
     .forEach(section => observer.observe(section));
+
+    // =========================================
+// SCROLL SIDEBAR
+// =========================================
+
+const scrollLinks = document.querySelectorAll(".scroll-link");
+const sections = document.querySelectorAll("main > section");
+
+function updateActiveSection() {
+
+    // Point de référence à 40% de la hauteur de l'écran
+    const activationPoint = window.innerHeight * 0.4;
+
+    let currentSection = sections[0];
+
+    sections.forEach(section => {
+
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop <= activationPoint) {
+            currentSection = section;
+        }
+
+    });
+
+    // Mise à jour du bouton actif
+    scrollLinks.forEach(link => {
+
+        link.classList.toggle(
+            "active",
+            link.dataset.section === currentSection.id
+        );
+
+    });
+}
+
+// Détection du scroll
+window.addEventListener("scroll", updateActiveSection, {
+    passive: true
+});
+
+// Actualisation au redimensionnement
+window.addEventListener("resize", updateActiveSection);
+
+// Détection initiale
+updateActiveSection();

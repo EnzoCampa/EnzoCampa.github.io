@@ -1,302 +1,565 @@
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Enzo Campanella | Gameplay Programmer</title>
-    <meta name="description" content="Portfolio d'Enzo Campanella, Gameplay Programmer spécialisé sur Unreal Engine 5.">
+        <title>Enzo Campanella | Gameplay Programmer</title>
+        <meta name="description" content="Portfolio d'Enzo Campanella, Gameplay Programmer spécialisé sur Unreal Engine 5.">
 
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
-</head>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/main.js" defer></script>
+    </head>
 
-<body>
+    <body>
 
+    <nav class="scroll-sidebar" aria-label="Navigation des sections">
+        <a href="#accueil" class="scroll-link active" data-section="accueil">
+            <span class="scroll-number">01</span>
+            <span class="scroll-label">Accueil</span>
+        </a>
 
+        <a href="#projets" class="scroll-link" data-section="projets">
+            <span class="scroll-number">02</span>
+            <span class="scroll-label">Projets</span>
+        </a>
+
+        <a href="#apropos" class="scroll-link" data-section="apropos">
+            <span class="scroll-number">03</span>
+            <span class="scroll-label">À propos</span>
+        </a>
+
+        <a href="#contact" class="scroll-link" data-section="contact">
+            <span class="scroll-number">04</span>
+            <span class="scroll-label">Contact</span>
+        </a>
+    </nav>
     
-    <header class="navbar">
-        <a href="#" class="logo">EC<span>.</span></a>
+        <header class="navbar">
+            <a href="#" class="logo">EC<span>.</span></a>
 
-        <nav class="nav-links" id="navLinks">
-            <a href="#accueil">Accueil</a>
-            <a href="#projets">Projets</a>
-            <a href="#apropos">À propos</a>
-            <a href="#contact">Contact</a>
-        </nav>
+            <nav class="nav-links" id="navLinks">
+                <a href="#accueil">Accueil</a>
+                <a href="#projets">Projets</a>
+                <a href="#apropos">À propos</a>
+                <a href="#contact">Contact</a>
+            </nav>
 
-        <button class="menu-toggle" id="menuToggle"
-                aria-label="Ouvrir le menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </header>
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
 
-    <main>
+        <main>
 
-        <section class="hero" id="accueil">
+            <section class="hero" id="accueil">
 
-            <div class="hero-content">
+                <div class="hero-content">
 
-                <p class="eyebrow">
-                    <span class="status-dot"></span>
-                    GAMEPLAY PROGRAMMER
-                </p>
+                    <p class="eyebrow">
+                        <span class="status-dot"></span>
+                        GAMEPLAY PROGRAMMER
+                    </p>
 
-                <h1>
-                    Enzo<br>
-                    <span>Campanella.</span>
-                </h1>
+                    <h1>
+                        Enzo<br>
+                        <span>Campanella.</span>
+                    </h1>
 
-                <h2>Je crée des expériences de jeu,<br>
-                    pas seulement des mécaniques.</h2>
+                    <h2>Je crée des expériences de jeu,<br>
+                        pas seulement des mécaniques.</h2>
 
-                <p class="hero-description">
-                    Passionné par les univers fantastiques, les systèmes
-                    de gameplay et les histoires qu'ils racontent, j'aime
-                    explorer toutes les facettes du développement de jeux vidéo.
-                    De la programmation à l'intelligence artificielle, en passant
-                    par la narration, je cherche à transformer des idées en
-                    expériences vivantes et engageantes.
-                </p>
+                    <p class="hero-description">
+                        Passionné par les univers fantastiques, les systèmes
+                        de gameplay et les histoires qu'ils racontent, j'aime
+                        explorer toutes les facettes du développement de jeux vidéo.
+                        De la programmation à l'intelligence artificielle, en passant
+                        par la narration, je cherche à transformer des idées en
+                        expériences vivantes et engageantes.
+                    </p>
 
-                <p class="hero-description secondary">
-                    Ce qui me motive avant tout, c'est de voir les joueurs
-                    s'approprier ces expériences, s'amuser, découvrir et
-                    simplement prendre du plaisir à jouer.
-                </p>
+                    <p class="hero-description secondary">
+                        Ce qui me motive avant tout, c'est de voir les joueurs
+                        s'approprier ces expériences, s'amuser, découvrir et
+                        simplement prendre du plaisir à jouer.
+                    </p>
 
-                <div class="hero-actions">
-                    <a href="#projets" class="btn btn-primary">
-                        Découvrir mes projets
-                        <span>↗</span>
-                    </a>
+                    <div class="hero-actions">
+                        <a href="#projets" class="btn btn-primary">
+                            Découvrir mes projets
+                            <span>↗</span>
+                        </a>
 
-                    <a href="#contact" class="btn btn-secondary">
-                        Me contacter
-                    </a>
-                </div>
-
-                <div class="hero-technologies">
-                    <span>UNREAL ENGINE 5</span>
-                    <span>GAMEPLAY</span>
-                    <span>BEHAVIORAL AI</span>
-                </div>
-
-            </div>
-
-            <div class="hero-visual">
-
-                <div class="portrait-frame">
-                    <div class="portrait-decoration"></div>
-
-                    <img
-                        src="assets/portrait.png"
-                        alt="Portrait d'Enzo Campanella"
-                        class="portrait"
-                    >
-
-                    <div class="portrait-caption">
-                        <span>PLAYER 01</span>
-                        <span>GAME DEVELOPER</span>
-                    </div>
-                </div>
-
-                <div class="floating-symbol symbol-one">✦</div>
-                <div class="floating-symbol symbol-two">✧</div>
-                <div class="floating-symbol symbol-three">◇</div>
-
-            </div>
-
-            <div class="scroll-indicator">
-                Scroll to explore
-            </div>
-
-        </section>
-
-        <section class="projects-section" id="projets">
-
-            <div class="projects-heading">
-                <p class="eyebrow">MES RÉALISATIONS</p>
-                <h2>Des idées aux expériences jouables.</h2>
-                <p>
-                    Des projets qui explorent différentes facettes
-                    de la création de jeux vidéo.
-                </p>
-            </div>
-
-            <!-- VORACE -->
-            <article class="project-row">
-                <div class="project-card">
-                    <div class="project-content">
-                        <p class="project-category">
-                            GAMEPLAY PROGRAMMING · NARRATIVE DESIGN
-                        </p>
-
-                        <h3>Vorace</h3>
-
-                        <p class="project-description">
-                            Vorace est un Twin Stick Shooter dans lequel le joueur
-                            incarne un ancien militaire ayant perdu sa famille et
-                            son village lors d'un massacre.
-                        </p>
-
-                        <p class="project-description">
-                            Animé par un désir de vengeance, il entreprend une
-                            dernière quête en consommant une plante appelée
-                            Vorace. Cette substance lui confère des pouvoirs
-                            extraordinaires, mais accélère également sa condamnation.
-                        </p>
-
-                        <a href="projects/vorace.html" class="project-link">
-                            Découvrir le projet <span>↗</span>
+                        <a href="#contact" class="btn btn-secondary">
+                            Me contacter
                         </a>
                     </div>
 
-
-                    <div class="project-image">
-                        <img src="assets/vorace-logo.png" alt="Logo du projet Vorace">
-                    </div>
-                </div>
-            </article>
-
-            <!-- POUSS'PL OUF -->
-            <article class="project-row reverse">
-
-                <div class="project-card">
-
-                    <div class="project-image">
-                        <img src="assets/pouss-plouf.png"
-                             alt="Visuel du jeu Pouss’Plouf !">
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            GAME DESIGN · GAMEPLAY PROGRAMMING
-                        </p>
-
-                        <h3>Pouss’Plouf !</h3>
-
-                        <p class="project-description">
-                            Pouss’Plouf ! est un party game dans lequel deux équipes
-                            de deux animaux rebondissants s'affrontent sur la banquise.
-                        </p>
-
-                        <p class="project-description">
-                            Le but est de pousser les adversaires dans les trous
-                            de l'arène à travers des duels loufoques.
-                        </p>
-
-                        <a href="projects/pouss-plouf.html" class="project-link">
-                            Découvrir le projet <span>↗</span>
-                        </a>
-
+                    <div class="hero-technologies">
+                        <span>Gameplay Programming</span>
+                        <span>Blueprint Scripting</span>
+                        <span>AI Programming</span>
+                        <span>Gameplay Systems</span>
+                        <span>Narrative Design</span>
+                        <span>Game Design</span>
                     </div>
 
                 </div>
 
-            </article>
+                <div class="hero-visual">
 
-            <!-- PROTOTYPE CRPG -->
-<article class="project-row">
+                <a href="#apropos" class="hero-portrait-link"
+       aria-label="Découvrir la section À propos">
+                    <div class="portrait-frame">
+                        <div class="portrait-decoration"></div>
 
-    <div class="project-card">
+                        <img
+                            src="assets/portrait.png"
+                            alt="Portrait d'Enzo Campanella"
+                            class="portrait"
+                        >
 
-        <div class="project-content">
+                        <div class="portrait-caption">
+                            <span>PLAYER 01</span>
+                            <span>GAME DEVELOPER</span>
+                        </div>
+                    </div>
+                     </a>
+                    <div class="floating-symbol symbol-one">✦</div>
+                    <div class="floating-symbol symbol-two">✧</div>
+                    <div class="floating-symbol symbol-three">◇</div>
 
-            <p class="project-category">
-                GAMEPLAY PROGRAMMING · UNREAL ENGINE 5
-            </p>
+                </div>
 
-            <h3>Prototype CRPG</h3>
+            
 
-            <p class="project-description">
-                Inspiré de Baldur’s Gate 3, ce prototype technique
-                a pour objectif de recréer un système de déplacement
-                au clic sous Unreal Engine 5.
-            </p>
+            </section>
 
-            <p class="project-description">
-                Le système repose sur la navigation par NavMesh,
-                la prévisualisation des trajectoires et l'utilisation
-                de Splines. Il intègre également une caméra à plusieurs
-                perspectives, alternant entre vue top-down et troisième
-                personne.
-            </p>
+            <section class="projects-section" id="projets">
 
-            <a href="projects/crpg.html" class="project-link">
-                Découvrir le projet <span>↗</span>
+                <div class="projects-heading">
+                    <p class="eyebrow">MES RÉALISATIONS</p>
+                    <h2>Des idées aux expériences jouables.</h2>
+                    <p>
+                        Des projets qui explorent différentes facettes
+                        de la création de jeux vidéo.
+                    </p>
+                </div>
+
+                <!-- VORACE -->
+                <article class="project-row project-row--vorace">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <p class="project-category">
+                                GAMEPLAY PROGRAMMING · NARRATIVE DESIGN
+                            </p>
+
+                            <h3>Vorace</h3>
+
+                            <p class="project-description">
+                                Vorace est un Twin Stick Shooter dans lequel le joueur
+                                incarne un ancien militaire ayant perdu sa famille et
+                                son village lors d'un massacre.
+                            </p>
+
+                            <p class="project-description">
+                                Animé par un désir de vengeance, il entreprend une
+                                dernière quête en consommant une plante appelée
+                                Vorace. Cette substance lui confère des pouvoirs
+                                extraordinaires, mais accélère également sa condamnation.
+                            </p>
+
+                            <a href="projects/vorace.html" class="project-link">
+                                Découvrir le projet <span>↗</span>
+                            </a>
+                        </div>
+
+                        <div class="project-image">
+                            <img src="assets/vorace-logo.png" alt="Logo du projet Vorace">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- POUSS'PL OUF -->
+                <article class="project-row reverse">
+
+                    <div class="project-card">
+
+                        <div class="project-image">
+                            <img src="assets/pouss-plouf.png"
+                                 alt="Visuel du jeu Pouss’Plouf !">
+                        </div>
+
+                        <div class="project-content">
+
+                            <p class="project-category">
+                                GAME DESIGN · GAMEPLAY PROGRAMMING
+                            </p>
+
+                            <h3>Pouss’Plouf !</h3>
+
+                            <p class="project-description">
+                                Pouss’Plouf ! est un party game dans lequel deux équipes
+                                de deux animaux rebondissants s'affrontent sur la banquise.
+                            </p>
+
+                            <p class="project-description">
+                                Le but est de pousser les adversaires dans les trous
+                                de l'arène à travers des duels loufoques.
+                            </p>
+
+                            <a href="projects/pouss-plouf.html" class="project-link">
+                                Découvrir le projet <span>↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- PROTOTYPE CRPG -->
+                <article class="project-row">
+
+                    <div class="project-card">
+
+                        <div class="project-content">
+
+                            <p class="project-category">
+                                GAMEPLAY PROGRAMMING · UNREAL ENGINE 5
+                            </p>
+
+                            <h3>Prototype CRPG</h3>
+
+                            <p class="project-description">
+                                Inspiré de Baldur’s Gate 3, ce prototype technique
+                                a pour objectif de recréer un système de déplacement
+                                au clic sous Unreal Engine 5.
+                            </p>
+
+                            <p class="project-description">
+                                Le système repose sur la navigation par NavMesh,
+                                la prévisualisation des trajectoires et l'utilisation
+                                de Splines. Il intègre également une caméra à plusieurs
+                                perspectives, alternant entre vue top-down et troisième
+                                personne.
+                            </p>
+
+                            <a href="projects/crpg.html" class="project-link">
+                                Découvrir le projet <span>↗</span>
+                            </a>
+
+                        </div>
+
+                        <div class="project-image">
+                            <img src="assets/crpg.png"
+                                 alt="Capture du prototype CRPG">
+                        </div>
+
+                    </div>
+
+                </article>
+                <!-- JDR MONSTER HUNTER -->
+                <article class="project-row reverse">
+
+                    <div class="project-card">
+
+                        <div class="project-image">
+                            <img src="assets/monster-hunter-jdr.png"
+                                 alt="Illustration du projet JDR Monster Hunter">
+                        </div>
+
+                        <div class="project-content">
+
+                            <p class="project-category">
+                                GAME DESIGN · WORLD BUILDING · SYSTEM DESIGN
+                            </p>
+
+                            <h3>Monster Hunter — JDR</h3>
+
+                            <p class="project-description">
+                                Projet de création d'un jeu de rôle sur table inspiré
+                                de Monster Hunter. L'objectif est de retranscrire
+                                l'expérience de chasse dans un système original,
+                                en développant un univers, son histoire et ses créatures.
+                            </p>
+
+                            <p class="project-description">
+                                Le système repose notamment sur des combats tactiques,
+                                quatre armes jouables aux mécaniques distinctes,
+                                un bestiaire avec des ruptures de parties et une
+                                progression du village à travers différents bâtiments
+                                et services.
+                            </p>
+
+                            <a href="projects/monster-hunter.html" class="project-link">
+                                Découvrir le projet <span>↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- À PROPOS : une seule section pour le profil et l'approche technique -->
+            <section class="about-section" id="apropos">
+
+                <!-- INTRODUCTION -->
+            <div class="section-header">
+        <p class="eyebrow">À PROPOS</p>
+        <h2>Qui je suis.</h2>
+        <p>Au-delà du résultat, le parcours.</p>
+    </div>
+
+                <div class="about-content">
+
+                    <!-- PARTIE 01 : QUI JE SUIS -->
+                    <div class="about-personal">
+
+                        <div class="about-intro">
+                            <h3>Créer, apprendre et progresser.</h3>
+
+                            <p>
+                                Pour moi, la création vidéoludique ne se résume pas
+                                au résultat final. Le chemin pour y parvenir compte
+                                tout autant : expérimenter, apprendre, rencontrer
+                                des difficultés et trouver des solutions font partie
+                                intégrante de chaque projet.
+                            </p>
+
+                            <p>
+                                J'apprécie les environnements où les idées peuvent
+                                être discutées, confrontées et améliorées
+                                collectivement. Ce qui me motive, c'est autant
+                                de voir une idée prendre vie que de savoir qu'elle
+                                pourra offrir une expérience intéressante aux joueurs.
+                            </p>
+                        </div>
+
+                        <div class="about-right">
+                         <div class="hero-visual">
+
+                                <a href="#apropos" class="hero-portrait-link"
+                                   aria-label="Découvrir la section À propos">
+
+                                    <div class="portrait-frame">
+                                        <div class="portrait-decoration"></div>
+
+                                        <img
+                                            src="assets/portrait.png"
+                                            alt="Portrait d'Enzo Campanella"
+                                            class="portrait"
+                                        >
+
+                                        <div class="portrait-caption">
+                                            <span>PLAYER 01</span>
+                                            <span>GAME DEVELOPER</span>
+                                        </div>
+                                    </div>
+
+                                </a>
+
+                                <div class="floating-symbol symbol-one">✦</div>
+                                <div class="floating-symbol symbol-two">✧</div>
+                                <div class="floating-symbol symbol-three">◇</div>
+
+                            </div>
+                        </div>
+
+                        <div class="about-values">
+
+                            <article class="value-card">
+                                <span class="value-number">01</span>
+                                <h4>Curiosité</h4>
+                                <p>
+                                    Apprendre en expérimentant et découvrir
+                                    de nouvelles approches.
+                                </p>
+                            </article>
+
+                            <article class="value-card">
+                                <span class="value-number">02</span>
+                                <h4>Persévérance</h4>
+                                <p>
+                                    Continuer à chercher jusqu'à trouver
+                                    une solution.
+                                </p>
+                            </article>
+
+                            <article class="value-card">
+                                <span class="value-number">03</span>
+                                <h4>Esprit critique</h4>
+                                <p>
+                                    Questionner les idées, argumenter
+                                    et confronter les points de vue.
+                                </p>
+                            </article>
+
+                            <article class="value-card">
+                                <span class="value-number">04</span>
+                                <h4>Esprit collectif</h4>
+                                <p>
+                                    S'investir dans un projet commun
+                                    et valoriser l'implication de chacun.
+                                </p>
+                            </article>
+
+                        </div>
+                    </div>
+
+                    <div class="about-separator"></div>
+
+                    <!-- PARTIE 02 : APPROCHE TECHNIQUE -->
+                    <div class="approach-content">
+
+                        <div class="approach-header">
+                            <p class="section-category">02 / APPROCHE TECHNIQUE</p>
+                            <h2>Penser. Structurer. Développer.</h2>
+                            <p>
+                                Une approche orientée architecture logicielle,
+                                systèmes décisionnels et résolution de problèmes.
+                            </p>
+                        </div>
+
+                        <div class="approach-flow">
+
+                            <div class="approach-stage">
+                                <h3>01 — Analyse du problème</h3>
+                                <div class="approach-card">
+                                    <div class="approach-card-title">
+                                        <span class="approach-icon">⌕</span>
+                                        <h4>Identifier les besoins</h4>
+                                    </div>
+                                    <p>
+                                        Comprendre les contraintes, analyser les causes
+                                        et définir les objectifs.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="approach-arrow" aria-hidden="true">↓</div>
+
+                            <div class="approach-stage">
+                                <h3>02 — Architecture du système</h3>
+                                <div class="approach-card">
+                                    <div class="approach-card-title">
+                                        <span class="approach-icon">⌘</span>
+                                        <h4>Organisation des composants</h4>
+                                    </div>
+                                    <div class="approach-components">
+                                        <span>Logique</span>
+                                        <span>Données</span>
+                                        <span>Interactions</span>
+                                    </div>
+                                    <p>
+                                        Définir les responsabilités et les relations
+                                        entre les différents éléments.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="approach-arrow" aria-hidden="true">↓</div>
+
+                            <div class="approach-stage">
+                                <h3>03 — Implémentation</h3>
+                                <div class="approach-card">
+                                    <div class="approach-card-title">
+                                        <span class="approach-icon">‹/›</span>
+                                        <h4>Développer la solution</h4>
+                                    </div>
+                                    <p>
+                                        Traduire l'architecture conçue en fonctionnalités
+                                        concrètes et intégrer les différents éléments
+                                        pour construire un système fonctionnel.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="approach-arrow" aria-hidden="true">↓</div>
+
+                            <div class="approach-stage">
+                                <h3>04 — Validation et optimisation</h3>
+                                <div class="approach-card">
+                                    <div class="approach-card-title">
+                                        <span class="approach-icon">⌕</span>
+                                        <h4>Tester et améliorer</h4>
+                                    </div>
+                                    <p>
+                                        Confronter le système à différentes situations,
+                                        déboguer, corriger les erreurs et améliorer
+                                        son fonctionnement.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section" id="contact">
+
+    <div class="contact-content">
+
+        <p class="section-category">04 / CONTACT</p>
+
+        <h2>Construisons quelque chose ensemble.</h2>
+
+        <p class="contact-description">
+            Vous avez un projet, une opportunité de stage
+            ou souhaitez simplement échanger ?
+            Je serais ravi d'en discuter.
+        </p>
+
+        <div class="contact-links">
+
+            <a href="mailto:enzo.campanella@outlook.fr" class="contact-link">
+                <div>
+                    <span class="contact-label">EMAIL</span>
+                    <h3>Me contacter par mail</h3>
+                </div>
+                <span class="contact-arrow">↗</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/enzo-campanella-76319a189/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact-link">
+                <div>
+                    <span class="contact-label">LINKEDIN</span>
+                    <h3>Mon profil professionnel</h3>
+                </div>
+                <span class="contact-arrow">↗</span>
+            </a>
+
+            <a href="https://github.com/EnzoCampa"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact-link">
+                <div>
+                    <span class="contact-label">GITHUB</span>
+                    <h3>Mes projets et dépôts</h3>
+                </div>
+                <span class="contact-arrow">↗</span>
             </a>
 
         </div>
 
-        <div class="project-image">
-            <img src="assets/crpg.png"
-                 alt="Capture du prototype CRPG">
-        </div>
+        <p class="contact-footer">
+            ENZO CAMPANELLA — GAMEPLAY PROGRAMMER
+        </p>
 
     </div>
 
-</article>
-<!-- JDR MONSTER HUNTER -->
-<article class="project-row reverse">
+</section>
 
-    <div class="project-card">
+        </main>
 
-        <div class="project-image">
-            <img src="assets/monster-hunter-jdr.png"
-                 alt="Illustration du projet JDR Monster Hunter">
-        </div>
-
-        <div class="project-content">
-
-            <p class="project-category">
-                GAME DESIGN · WORLD BUILDING · SYSTEM DESIGN
-            </p>
-
-            <h3>Monster Hunter — JDR</h3>
-
-            <p class="project-description">
-                Projet de création d'un jeu de rôle sur table inspiré
-                de Monster Hunter. L'objectif est de retranscrire
-                l'expérience de chasse dans un système original,
-                en développant un univers, son histoire et ses créatures.
-            </p>
-
-            <p class="project-description">
-                Le système repose notamment sur des combats tactiques,
-                quatre armes jouables aux mécaniques distinctes,
-                un bestiaire avec des ruptures de parties et une
-                progression du village à travers différents bâtiments
-                et services.
-            </p>
-
-            <a href="projects/monster-hunter.html" class="project-link">
-                Découvrir le projet <span>↗</span>
-            </a>
-
-        </div>
-
-    </div>
-
-</article>
-
-        </section>
-
-        <section class="simple-section" id="apropos">
-            <h2>À propos</h2>
-            <p>Section en construction.</p>
-        </section>
-
-        <section class="simple-section" id="contact">
-            <h2>Contact</h2>
-            <p>Section en construction.</p>
-        </section>
-
-    </main>
-
-</body>
-</html>
+    </body>
+    </html>
